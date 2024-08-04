@@ -1,40 +1,38 @@
 // src/components/CategoryFilter.tsx
 import React from 'react';
-import styled from 'styled-components';
-
-const FilterContainer = styled.div`
-  margin: 16px 0;
-`;
-
-const Label = styled.label`
-  margin-right: 8px;
-`;
-
-const Select = styled.select`
-  padding: 8px;
-`;
+import '../styles/CategoryFilter.css';
 
 interface CategoryFilterProps {
   categories: string[];
-  selectedCategory: string | null;
-  onCategoryChange: (category: string | null) => void;
+  selectedCategories: Set<string>;
+  onCategoryChange: (category: string, isSelected: boolean) => void;
+  onClearFilters: () => void; // Nouvelle propriété pour réinitialiser les filtres
 }
 
-const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, selectedCategory, onCategoryChange }) => {
+const CategoryFilter: React.FC<CategoryFilterProps> = ({
+  categories,
+  selectedCategories,
+  onCategoryChange,
+  onClearFilters
+}) => {
   return (
-    <FilterContainer>
-      <Label htmlFor="category-filter">Filtrer par catégorie:</Label>
-      <Select
-        id="category-filter"
-        value={selectedCategory || ''}
-        onChange={(e) => onCategoryChange(e.target.value || null)}
+    <div className="category-filter">
+      <div 
+        className="category-filter-item"
+        onClick={onClearFilters}
       >
-        <option value="">Toutes les catégories</option>
-        {categories.map(category => (
-          <option key={category} value={category}>{category}</option>
-        ))}
-      </Select>
-    </FilterContainer>
+        Voir tout
+      </div>
+      {categories.map(category => (
+        <div
+          key={category}
+          className={`category-filter-item ${selectedCategories.has(category) ? 'selected' : ''}`}
+          onClick={() => onCategoryChange(category, !selectedCategories.has(category))}
+        >
+          {category}
+        </div>
+      ))}
+    </div>
   );
 };
 

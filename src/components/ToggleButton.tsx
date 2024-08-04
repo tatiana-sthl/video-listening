@@ -1,6 +1,6 @@
 // src/components/ToggleButtonComponent.tsx
 import React from 'react';
-import '../styles/ToggleButtonComponent.css'; // Assurez-vous que le chemin est correct
+import '../styles/ToggleButton.css'; // Assurez-vous que le chemin est correct
 
 interface ToggleButtonProps {
   showLikes: boolean;

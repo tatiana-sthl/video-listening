@@ -1,13 +1,36 @@
-/* src/components/styles/CategoryFilter.css */
-.filter-container {
-    margin: 16px 0;
-  }
-  
-  .filter-label {
-    margin-right: 8px;
-  }
-  
-  .filter-select {
-    padding: 8px;
-  }
-  
+/* src/styles/CategoryFilter.css */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.category-filter-item {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.category-filter-item.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.category-filter-item:hover {
+  background-color: #e0e0e0;
+}
+
+.category-filter-item.voir-tout {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+.category-filter-item.voir-tout:hover {
+  background-color: #d0d0d0;
+}

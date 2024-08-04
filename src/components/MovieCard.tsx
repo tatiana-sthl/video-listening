@@ -1,6 +1,7 @@
 // src/components/MovieCard.tsx
 import React from 'react';
-import '../styles/MovieCard.css'; // Import du fichier CSS
+import '../styles/MovieCard.css'; // Assurez-vous que le chemin est correct
+import ToggleButtonComponent from './ToggleButton';
 
 interface MovieCardProps {
   title: string;
@@ -17,21 +18,16 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
     setShowLikes(prev => !prev);
   };
 
-  const ratio = (showLikes ? likes : dislikes) / (likes + dislikes);
+  // Calculer le ratio pour la jauge
+  const totalVotes = likes + dislikes;
+  const ratio = totalVotes === 0 ? 0 : (showLikes ? likes : dislikes) / totalVotes;
 
   return (
     <div className="movie-card">
       <button className="delete-button" onClick={onDelete}>Supprimer</button>
       <h3>{title}</h3>
       <p>{category}</p>
-      <div className="toggle-button" onClick={toggleShowLikes}>
-        <span className="toggle-button-icon">
-          {showLikes ? '👍' : '👎'}
-        </span>
-        <span className="toggle-button-text">
-          {showLikes ? 'Likes' : 'Dislikes'}
-        </span>
-      </div>
+      <ToggleButtonComponent showLikes={showLikes} onToggle={toggleShowLikes} />
       <div className="gauge-container">
         <div
           className="gauge"

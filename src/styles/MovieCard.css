@@ -1,4 +1,4 @@
-/* src/components/styles/MovieCard.css */
+/* src/styles/MovieCard.css */
 .movie-card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -34,5 +34,20 @@
   
   .delete-button:hover {
     background: #e60000;
+  }
+  
+  .gauge-container {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  
+  .gauge {
+    height: 100%;
+    background: #4caf50; /* Default color for gauge */
+    transition: width 0.3s;
   }
   

@@ -1,0 +1,13 @@
+/* src/components/styles/CategoryFilter.css */
+.filter-container {
+    margin: 16px 0;
+  }
+  
+  .filter-label {
+    margin-right: 8px;
+  }
+  
+  .filter-select {
+    padding: 8px;
+  }
+  

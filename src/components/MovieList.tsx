@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { movies$ } from '../movies';
+import { movies$, Movie } from '../movies';
+import ToggleButton from './ToggleButton'; // Importation du composant ToggleButton
 
 const Container = styled.div`
   display: flex;
@@ -33,19 +34,6 @@ const Title = styled.h2`
 
 const Category = styled.p`
   margin-bottom: 8px;
-`;
-
-const Gauge = styled.div`
-  height: 24px;
-  background: #e0e0e0;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 8px;
-
-  & > div {
-    height: 100%;
-    background: #76c7c0;
-  }
 `;
 
 const Button = styled.button`
@@ -115,14 +103,6 @@ const Select = styled.select`
   margin-left: 16px;
 `;
 
-interface Movie {
-  id: string;
-  title: string;
-  category: string;
-  likes: number;
-  dislikes: number;
-}
-
 const MovieList: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -135,14 +115,6 @@ const MovieList: React.FC = () => {
 
   const handleDelete = (id: string) => {
     setMovies(movies.filter(movie => movie.id !== id));
-  };
-
-  const handleToggleLike = (id: string) => {
-    setMovies(movies.map(movie =>
-      movie.id === id
-        ? { ...movie, likes: movie.likes + 1, dislikes: movie.dislikes - 1 }
-        : movie
-    ));
   };
 
   const handleCategoryToggle = (category: string) => {
@@ -189,10 +161,10 @@ const MovieList: React.FC = () => {
           <Card key={movie.id}>
             <Title>{movie.title}</Title>
             <Category>{movie.category}</Category>
-            <Gauge>
-              <div style={{ width: `${(movie.likes / (movie.likes + movie.dislikes)) * 100}%` }} />
-            </Gauge>
-            <Button onClick={() => handleToggleLike(movie.id)}>Like/Dislike</Button>
+            <ToggleButton
+              likes={movie.likes}
+              dislikes={movie.dislikes}
+            />
             <Button onClick={() => handleDelete(movie.id)}>Delete</Button>
           </Card>
         ))}

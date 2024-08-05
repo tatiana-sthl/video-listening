@@ -1,14 +1,15 @@
-/* src/styles/CategoryFilter.css */
 .category-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 16px;
+  justify-content: center;
+  margin: 2rem
 }
 
 .category-filter-item {
+  font-size: 20px;
   padding: 8px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(16, 0, 102);
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
@@ -16,19 +17,21 @@
 }
 
 .category-filter-item.selected {
-  background-color: #007bff;
+  background-color: rgb(210,57,121);
   color: white;
-  border-color: #007bff;
+  border-color: rgb(210,57,121);
 }
 
 .category-filter-item:hover {
-  background-color: #e0e0e0;
+  background-color: rgb(210,57,121);
+  border-color: rgb(210,57,121);
+  color: white;
 }
 
 .category-filter-item.voir-tout {
   font-weight: bold;
   background-color: #f0f0f0;
-  border-color: #bbb;
+  border-color: rgb(210,57,121);
 }
 
 .category-filter-item.voir-tout:hover {

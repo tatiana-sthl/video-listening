@@ -1,4 +1,3 @@
-// src/components/CategoryFilter.tsx
 import React from 'react';
 import '../styles/CategoryFilter.css';
 
@@ -6,7 +5,7 @@ interface CategoryFilterProps {
   categories: string[];
   selectedCategories: Set<string>;
   onCategoryChange: (category: string, isSelected: boolean) => void;
-  onClearFilters: () => void; // Nouvelle propriété pour réinitialiser les filtres
+  onClearFilters: () => void; 
 }
 
 const CategoryFilter: React.FC<CategoryFilterProps> = ({
@@ -21,7 +20,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
         className="category-filter-item"
         onClick={onClearFilters}
       >
-        Voir tout
+        All
       </div>
       {categories.map(category => (
         <div

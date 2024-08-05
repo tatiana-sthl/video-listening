@@ -1,0 +1,30 @@
+/* src/components/Pagination.css */
+
+.pagination-container {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center;
+    margin: 16px 0;
+  }
+  
+  .pagination-controls {
+    display: flex; /* Aligne les boutons horizontalement */
+    gap: 8px; /* Espace entre les boutons */
+  }
+  
+  .pagination-button {
+    background-color: rgb(210,57,121);
+    color: white;
+    border: 2px solid rgb(210,57,121);
+  }
+  
+  .pagination-button:disabled {
+    color : rgb(210,57,121);
+    border: 2px solid rgb(210,57,121);
+    background-color: #ffffff;
+  }
+  
+  .pagination-select {
+    margin-top: 8px; /* Espace entre les boutons et le sélecteur */
+  }
+  

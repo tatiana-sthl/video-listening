@@ -24,9 +24,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
 
   return (
     <div className="movie-card">
-      <button className="delete-button" onClick={onDelete}>Supprimer</button>
       <h3>{title}</h3>
-      <p>{category}</p>
+      <h4>{category}</h4>
       <ToggleButtonComponent showLikes={showLikes} onToggle={toggleShowLikes} />
       <div className="gauge-container">
         <div
@@ -35,6 +34,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
         />
       </div>
       <p>{showLikes ? likes : dislikes}</p>
+      <button className="delete-button" onClick={onDelete}>Supprimer</button>
     </div>
   );
 };

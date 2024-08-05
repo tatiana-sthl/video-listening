@@ -1,6 +1,5 @@
-/* src/styles/MovieCard.css */
 .movie-card {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(16, 0, 102);
     border-radius: 8px;
     padding: 16px;
     margin: 16px;
@@ -9,11 +8,21 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 350px;
+    min-height: 150px;
+    box-sizing: border-box;
   }
   
   .movie-card h3 {
     margin: 0;
     font-weight: bold;
+    color: rgb(83, 43, 227);
+  }
+
+  .movie-card h4 {
+    margin: 0;
+    font-style: italic;
+    color: rgb(16, 0, 102);
   }
   
   .movie-card p {
@@ -21,9 +30,6 @@
   }
   
   .delete-button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
     background: #ff4d4d;
     color: #fff;
     border: none;

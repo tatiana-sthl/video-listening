@@ -7,33 +7,36 @@
 }
 
 .category-filter-item {
-  font-size: 20px;
+  font-size: 25px;
   padding: 8px 12px;
-  border: 1px solid rgb(16, 0, 102);
+  background-color: rgb(210,57,121);
+  color: white;
+  border: 2px solid rgb(210,57,121);
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.4s, color 0.4s;
 }
 
 .category-filter-item.selected {
-  background-color: rgb(210,57,121);
-  color: white;
-  border-color: rgb(210,57,121);
+  color : rgb(210,57,121);
+  border: 2px solid rgb(210,57,121);
+  background-color: #ffffff;
+
 }
 
 .category-filter-item:hover {
-  background-color: rgb(210,57,121);
-  border-color: rgb(210,57,121);
-  color: white;
+  color : rgb(210,57,121);
+  border: 2px solid rgb(210,57,121);
+  background-color: #ffffff;
 }
 
 .category-filter-item.voir-tout {
   font-weight: bold;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border-color: rgb(210,57,121);
 }
 
 .category-filter-item.voir-tout:hover {
-  background-color: #d0d0d0;
+  background-color: #ffffff;
 }

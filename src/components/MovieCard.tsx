@@ -25,14 +25,16 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
       <h3>{title}</h3>
       <h4>{category}</h4>
       <ToggleButtonComponent showLikes={showLikes} onToggle={toggleShowLikes} />
-      <div className="gauge-container">
-        <div
-          className="gauge"
-          style={{ width: `${ratio * 100}%`, backgroundColor: showLikes ? '#4caf50' : '#f44336' }}
-        />
+      <div className="gauge-wrapper">
+        <div className="gauge-container">
+          <div
+            className="gauge"
+            style={{ width: `${ratio * 100}%`, backgroundColor: showLikes ? '#4caf50' : '#f44336' }}
+          />
+        </div>
+        <span className="gauge-value">{showLikes ? likes : dislikes}</span>
       </div>
-      <p>{showLikes ? likes : dislikes}</p>
-      <button className="delete-button" onClick={onDelete}>Supprimer</button>
+      <button className="delete-button" onClick={onDelete}>🗑️</button>
     </div>
   );
 };

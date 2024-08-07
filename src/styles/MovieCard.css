@@ -35,9 +35,9 @@
 }
 
 .delete-button {
-  background: #ff4d4d;
+  background: #f7f7f7;
   color: #fff;
-  border: none;
+  border-color: #e60000;
   border-radius: 4px;
   padding: 4px 8px;
   cursor: pointer;
@@ -46,18 +46,29 @@
 .delete-button:hover {
   background: #e60000;
 }
+.gauge-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  width: 100%;
+}
 
 .gauge-container {
-  width: 100%;
-  height: 1rem;
+  flex: 1;
+  height: 10px;
   background: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
-  margin-top: 8px;
+  position: relative;
 }
 
 .gauge {
   height: 100%;
   background: #4caf50; 
   transition: width 0.3s;
+}
+
+.gauge-value {
+  margin-left: 8px;
+  font-weight: bold;
 }

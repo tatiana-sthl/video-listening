@@ -31,12 +31,3 @@
   background-color: #ffffff;
 }
 
-.category-filter-item.voir-tout {
-  font-weight: bold;
-  background-color: #ffffff;
-  border-color: rgb(210,57,121);
-}
-
-.category-filter-item.voir-tout:hover {
-  background-color: #ffffff;
-}

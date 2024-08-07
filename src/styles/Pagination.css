@@ -1,30 +1,38 @@
-/* src/components/Pagination.css */
-
 .pagination-container {
-    display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    align-items: center;
-    margin: 16px 0;
-  }
-  
-  .pagination-controls {
-    display: flex; /* Aligne les boutons horizontalement */
-    gap: 8px; /* Espace entre les boutons */
-  }
-  
-  .pagination-button {
-    background-color: rgb(210,57,121);
-    color: white;
-    border: 2px solid rgb(210,57,121);
-  }
-  
-  .pagination-button:disabled {
-    color : rgb(210,57,121);
-    border: 2px solid rgb(210,57,121);
-    background-color: #ffffff;
-  }
-  
-  .pagination-select {
-    margin-top: 8px; /* Espace entre les boutons et le sélecteur */
-  }
-  
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-button {
+  background-color: rgb(210,57,121);
+  color: white;
+  border: 2px solid rgb(210,57,121);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin: 0 4px;
+  font-size: 14px;
+}
+
+.pagination-button:disabled {
+  color : rgb(210,57,121);
+  border: 2px solid rgb(210,57,121);
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+
+.pagination-select {
+  margin-top: 1rem;
+  border: 2px solid rgb(210,57,121);
+  border-radius: 4px;
+  padding: 0.5rem;
+  color : rgb(16, 0, 102);
+}

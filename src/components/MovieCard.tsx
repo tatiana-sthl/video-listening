@@ -1,6 +1,5 @@
-// src/components/MovieCard.tsx
 import React from 'react';
-import '../styles/MovieCard.css'; // Assurez-vous que le chemin est correct
+import '../styles/MovieCard.css'; 
 import ToggleButtonComponent from './ToggleButton';
 
 interface MovieCardProps {
@@ -18,7 +17,6 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
     setShowLikes(prev => !prev);
   };
 
-  // Calculer le ratio pour la jauge
   const totalVotes = likes + dislikes;
   const ratio = totalVotes === 0 ? 0 : (showLikes ? likes : dislikes) / totalVotes;
 

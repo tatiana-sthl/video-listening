@@ -1,6 +1,5 @@
-// src/components/ToggleButtonComponent.tsx
 import React from 'react';
-import '../styles/ToggleButton.css'; // Assurez-vous que le chemin est correct
+import '../styles/ToggleButton.css'; 
 
 interface ToggleButtonProps {
   showLikes: boolean;
@@ -10,14 +9,11 @@ interface ToggleButtonProps {
 const ToggleButtonComponent: React.FC<ToggleButtonProps> = ({ showLikes, onToggle }) => {
   return (
     <div className="toggle-container">
-      <div className="toggle-button" onClick={onToggle}>
-        <span className="toggle-button-icon">
-          {showLikes ? '👍' : '👎'}
-        </span>
-        <span className="toggle-button-text">
-          {showLikes ? 'Likes' : 'Dislikes'}
-        </span>
+      <span className="toggle-button-icon">👍</span>
+      <div className={`toggle-switch ${showLikes ? 'on' : 'off'}`} onClick={onToggle}>
+        <div className="toggle-slider" />
       </div>
+      <span className="toggle-button-icon">👎</span>
     </div>
   );
 };

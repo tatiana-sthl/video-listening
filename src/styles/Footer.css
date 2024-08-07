@@ -1,0 +1,28 @@
+.app-footer {
+    background-color: rgb(234, 229, 252);
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+  }
+  
+  .footer-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-menu a {
+    color: #100065;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-menu span {
+    margin: 0 10px;
+    color: #100065;
+  }
+  

@@ -1,4 +1,3 @@
-// src/components/MovieList.tsx
 import React, { useState, useEffect } from 'react';
 import MovieCard from './MovieCard';
 import Pagination from './Pagination';
@@ -81,8 +80,8 @@ const MovieList: React.FC = () => {
   };
 
   const handleClearFilters = () => {
-    setSelectedCategories(new Set()); // Réinitialiser les filtres
-    setCurrentPage(1); // Réinitialiser la page
+    setSelectedCategories(new Set());
+    setCurrentPage(1); 
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -95,7 +94,7 @@ const MovieList: React.FC = () => {
         categories={categories}
         selectedCategories={selectedCategories}
         onCategoryChange={handleCategoryChange}
-        onClearFilters={handleClearFilters} // Passer la fonction au composant
+        onClearFilters={handleClearFilters} 
       />
       <div className="movie-list">
         {paginatedMovies.length > 0 ? (
